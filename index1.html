@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fashion Zone - Premium Men's Wear</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style1.css">
 </head>
 <body>
     <div class="main">
-        <div class="navbar">
+        <nav class="navbar">
             <div class="icon">
                 <div class="logo">FASHION ZONE</div>
             </div>
-            <div class="menu">
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="menu" id="nav-menu">
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Collections</a></li>
@@ -23,14 +27,16 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </div>
-            <div class="search">
-                <input type="text" class="srch" placeholder="Search products...">
-                <button class="btn"><i class="fas fa-search"></i></button>
+            <div class="nav-right">
+                <div class="search">
+                    <input type="text" class="srch" placeholder="Search products...">
+                    <button class="btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="cart-icon">
+                    <a href="#"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                </div>
             </div>
-            <div class="cart-icon">
-                <a href="#"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-            </div>
-        </div>
+        </nav>
 
         <div class="content">
             <h1>ELEVATE YOUR <br><span>STYLE</span> <br>WITH OUR COLLECTION</h1>
@@ -61,31 +67,61 @@
         <h2>OUR COLLECTIONS</h2>
         <div class="collection-grid">
             <div class="collection-item">
-                <img src="Images/formal pant.jpg" alt="Formal Wear">
+                <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Formal Wear">
                 <div class="collection-overlay">
                     <h3>Formal Wear</h3>
                     <button>View Collection</button>
                 </div>
             </div>
             <div class="collection-item">
-                <img src="Images/formal wear.jpeg" alt="Casual Wear">
+                <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Casual Wear">
                 <div class="collection-overlay">
                     <h3>Casual Wear</h3>
                     <button>View Collection</button>
                 </div>
             </div>
             <div class="collection-item">
-                <img src="Images/sports.jpg" alt="Sports Wear">
+                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sports Wear">
                 <div class="collection-overlay">
                     <h3>Sports Wear</h3>
                     <button>View Collection</button>
                 </div>
             </div>
             <div class="collection-item">
-                <img src="Images/nike dunk2.jpg" alt="Sneakers">
+                <img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Sneakers">
                 <div class="collection-overlay">
                     <h3>Sneakers</h3>
                     <button>View Collection</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="new-arrivals">
+        <h2>NEW ARRIVALS</h2>
+        <div class="arrivals-grid">
+            <div class="arrival-item">
+                <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="New Arrival 1">
+                <div class="arrival-info">
+                    <h3>Premium Suit</h3>
+                    <p class="price">RS 5,999</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="arrival-item">
+                <img src="https://images.unsplash.com/photo-1539533018447-63fcce2678e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="New Arrival 2">
+                <div class="arrival-info">
+                    <h3>Designer Jeans</h3>
+                    <p class="price">RS 2,499</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="arrival-item">
+                <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="New Arrival 3">
+                <div class="arrival-info">
+                    <h3>Leather Jacket</h3>
+                    <p class="price">RS 7,999</p>
+                    <button>Add to Cart</button>
                 </div>
             </div>
         </div>
@@ -109,7 +145,7 @@
             <div class="footer-section">
                 <h3>Contact Us</h3>
                 <p><i class="fas fa-map-marker-alt"></i> Lokenthali Chowk, Bhaktapur City</p>
-                <p><i class="fas fa-phone"></i>+977 9851312098</p>
+                <p><i class="fas fa-phone"></i> +977 9851312098</p>
                 <p><i class="fas fa-envelope"></i> info@fashionzone.com</p>
             </div>
             <div class="footer-section">
@@ -131,5 +167,26 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navMenu = document.getElementById('nav-menu');
+        
+        mobileMenu.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
