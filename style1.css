@@ -13,7 +13,7 @@ body {
 .main {
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), url();
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 100%), url("Images/front.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
